@@ -2,6 +2,11 @@
 # ZenithImage
 Manipulation d'image avec affichage dans Minecraft.
 
+## Informations utiles
+ ### Prérequis
+- [Spigot](https://www.spigotmc.org/) 1.8.8 ( avec BuildTools )
+- [Java](https://www.java.com/fr/download/) 22
+
 ## Utilisation
 Les paramètres des méthodes seront ici simplifiés pour la compréhension.
 
@@ -43,6 +48,7 @@ D'autres méthodes, comme la création d'une ligne d'une coordonnée, sont dispo
 - [ ] Support vidéo
 - [ ] Support GIF
 - [ ] Optimisation de la méthode `update(data...)` dans l'objet `ModifiedImage`
+- [ ] Renvoie des packets de l'image si un joueur est trop loin d'une image 
 
 ## Auteur
 - [Philouu](https://github.com/philougoatesque) 
