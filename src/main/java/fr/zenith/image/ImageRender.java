@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 @Getter
 public class ImageRender extends JavaPlugin {
 
-    public static ImageRender instance;
+    private static ImageRender instance;
 
     private ColorHandler colorHandler;
     private ImageManipulationHandler imageManipulationHandler;
@@ -26,5 +26,9 @@ public class ImageRender extends JavaPlugin {
 
         this.getServer().getPluginManager().registerEvents(new BukkitListener(this), this);
         this.getLogger().info("Plugin enabled");
+    }
+
+    public static ImageRender get() {
+        return instance;
     }
 }
