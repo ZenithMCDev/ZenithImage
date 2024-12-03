@@ -10,12 +10,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 @Getter
 public class ImageRender extends JavaPlugin {
 
+    public static ImageRender instance;
+
     private ColorHandler colorHandler;
     private ImageManipulationHandler imageManipulationHandler;
     private RayTraceHandler rayTraceHandler;
 
     @Override
     public void onEnable() {
+        instance = this;
+
         this.colorHandler = new ColorHandler(this);
         this.imageManipulationHandler = new ImageManipulationHandler(this);
         this.rayTraceHandler = new RayTraceHandler(this);
