@@ -1,0 +1,26 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '22'
+
+    - name: Publish package to GitHub Packages
+      run: mvn deploy -DskipTests
+      env:
+        MAVEN_USERNAME: ${{ github.actor }} 
+        MAVEN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
