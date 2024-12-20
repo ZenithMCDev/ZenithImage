@@ -35,15 +35,6 @@ public class ColorHandler {
         }
 
         executor.shutdown();
-
-        try {
-            if (!executor.awaitTermination(10, TimeUnit.SECONDS)) {
-                System.err.println("The cache system has taken too long to initialize");
-            }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException("The cache system has been interrupted ", e);
-        }
     }
 
     public byte[] convertImageToMapColors(BufferedImage image, int width, int height) {
